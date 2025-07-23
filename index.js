@@ -2,7 +2,7 @@ import express from "express";
 import pkg from "body-parser";
 import dotenv from "dotenv";
 import router from "./routes/allRoutes.js";
-
+import cors from "cors";
 // instance of express
 dotenv.config();
 const { json } = pkg;
@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // bodyparser middleware
+app.use(cors());
 app.use(json());
 
 // router
