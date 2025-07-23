@@ -8,7 +8,7 @@ export default async function generateText(report) {
   try {
     //
     const system_message =
-      "You are a medical assistant. Analyze My following medical report text and explain it in simple, easy-to-understand terms for a non-medical person. If any abnormalities are found, explain them and what they might mean. My report contains lots of uneccessory data ignore that data. Please give a short paragraph summary, explain any concerns, and advise what the patient should do next. at the end provide summery of whole report is it normal or not do not include any medical terms of blood reports while responding add htmls strong tag instead of **point** and remove those ** ** from the response ";
+      "You are a medical assistant. Analyze My following medical report text and explain it in simple, easy-to-understand terms for a non-medical person. If any abnormalities are found, explain them and what they might mean. My report contains lots of uneccessory data ignore that data. Please give a short paragraph summary, explain any concerns, and advise what the patient should do next. at the end provide summery of whole report is it normal or not do not include any medical terms of blood reports while responding add htmls strong tag instead of **point** and remove those ** ** from the response do not repeat the report text in your response. and do not include any medical terms in your response.";
     const response = await cohere.chat({
       model: "command-a-03-2025",
       messages: [
