@@ -5,6 +5,7 @@ import {
 import generateReportUtil from "../utils/generateReportUtil.js";
 
 const cleanUpText = (text) => {
+  return text;
   return text.replace(/[\*\#]/g, "");
 };
 
