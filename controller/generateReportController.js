@@ -4,6 +4,10 @@ import {
 } from "../utils/convertToText.js";
 import generateReportUtil from "../utils/generateReportUtil.js";
 
+const cleanUpText = (text) => {
+  return text.replace(/[\*\#]/g, "");
+};
+
 export async function generateReportController(req, res) {
   try {
     // check file is recevied
@@ -46,7 +50,7 @@ export async function generateReportController(req, res) {
       return res.status(200).send({
         success: true,
         message: "Response Generated",
-        response: generatedResponse.response,
+        response: cleanUpText(generatedResponse.response),
       });
     }
     // if file is image file
@@ -74,7 +78,7 @@ export async function generateReportController(req, res) {
       return res.status(200).send({
         success: true,
         message: "Response Generated",
-        response: generatedResponse.response,
+        response: cleanUpText(generatedResponse.response),
       });
     } else {
       return res
